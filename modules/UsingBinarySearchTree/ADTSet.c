@@ -367,6 +367,21 @@ bool set_is_proper(Set node) {
 
 //// Επιπλέον συναρτήσεις προς υλοποίηση στο Εργαστήριο 5
 
-void set_visit(Set set, VisitFunc visit) {
+//void set_visit(Set set, VisitFunc visit) {
+//	for (SetNode node = set_first(set) ; node != SET_EOF ; node = set_next(set, node)) {
+//		visit(set_node_value(set, node));
+//	}
+//}
 
+void node_visit(SetNode node, VisitFunc visit) {
+	if (node == NULL) {
+		return;
+	}
+	node_visit(node->left, visit);
+	visit(node->value);
+	node_visit(node->right, visit);
+}
+
+void set_visit(Set set, VisitFunc visit) {
+	node_visit(set->root, visit);
 }

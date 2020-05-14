@@ -4,7 +4,7 @@
 		"dir": "tests",
 
 		// Όνομα του εκτελέσιμου προγράμματος
-		"program": "UsingBinarySearchTree_ADTSet_test",
+		"program": "UsingBTree_ADTSet_test",
 
 		// Ορίσματα του προγράμματος.
 		// - Για ανακατεύθυνση εισόδου βάζουμε ορίσματα: "<", "input-file"
