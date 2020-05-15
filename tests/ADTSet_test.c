@@ -8,6 +8,7 @@
 #include "acutest.h"			// Απλή βιβλιοθήκη για unit testing
 
 #include "ADTSet.h"
+#include <time.h>
 
 
 // Η συνάρτηση αυτή δεν υπάρχει στο public interface του Set αλλά χρησιμεύει
@@ -307,16 +308,22 @@ void test_visit() {
 	// Δοκιμή της set_visit σε ένα set με N στοιχεία
 	Set set = set_create(compare_ints, free);
 
-	int N = 1000;
+	clock_t clk_start, clk_end;
+
+	int N = 200000;
 	for (int i = 0; i < N; i++)
 		set_insert(set, create_int(i));
 
 	// Η last_visited περιέχει το τελευταίο στοιχείο που έχουμε επισκεφθεί
 	last_visited = -1;
+
+	clk_start = clock();
 	set_visit(set, visit);
+	clk_end = clock();
 
 	TEST_ASSERT(last_visited == N-1);
 	set_destroy(set);
+	printf("\nTime taken for set_visit (for set with 50 000 elements): %f secs\n", (double)(clk_end - clk_start) / CLOCKS_PER_SEC);
 }
 
 
