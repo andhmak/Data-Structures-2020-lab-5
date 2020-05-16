@@ -754,12 +754,15 @@ bool set_is_proper(Set set) {
 
 //// Επιπλέον συναρτήσεις προς υλοποίηση στο Εργαστήριο 5
 
+// μέρος 2 (commented out)
 
 //void set_visit(Set set, VisitFunc visit) {
 //	for (SetNode node = set_first(set) ; node != SET_EOF ; node = set_next(set, node)) {
 //		visit(set_node_value(set, node));
 //	}
 //}
+
+// μέρος 3
 
 void node_visit(BTreeNode node, VisitFunc visit) {
 	if (node == NULL) {
