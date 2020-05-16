@@ -310,7 +310,7 @@ void test_visit() {
 
 	clock_t clk_start, clk_end;
 
-	int N = 200000;
+	int N = 50000;
 	for (int i = 0; i < N; i++)
 		set_insert(set, create_int(i));
 
